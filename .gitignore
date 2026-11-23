@@ -1,0 +1,6 @@
+dataset
+.python-version
+pyproject.toml
+.venv
+uv.lock
+AnomalyCLIP/
