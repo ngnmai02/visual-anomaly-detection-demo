@@ -53,7 +53,10 @@ You will first need to configure the rclone to retrieve the dataset.
 
 3. Generate the access key and save `Access key` and `Secret key` somewhere safe and private. 
 
-4. Going back to the Jupyter session and open a terminal in the Jupyter app (**File → New → Terminal**).
+4. Going back to the Jupyter session and open a terminal in the Jupyter app (**File → New → Terminal**). Make sure you are in the root of this repository.
+```
+pwd
+```
 
 5. Set up rcond config for LUMI-O based on the instruction when running the below command. 
 ```
