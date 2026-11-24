@@ -1,4 +1,4 @@
-dataset
+dataset/*
 .python-version
 pyproject.toml
 .venv
