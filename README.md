@@ -23,10 +23,9 @@ This setup is suitable for:
 - Running fine-tuning experiments on a small scale  
 - Performing inference interactively
 
-
 ### 3. Get the notebooks
 
-Open a terminal in the Jupyter app (**File → New → Terminal**) and choose one of the options below.
+Open a terminal in the Jupyter app (**File → New → Terminal**).
 
 You will need access to LUMI and are a member of a LUMI computing project. 
 
@@ -42,9 +41,37 @@ git clone https://github.com/ngnmai02/visual-anomaly-detection-demo.git
 
 Then open the notebooks from `/scratch/$PROJECT/$USER/visual-anomaly-detection-demo` in the Jupyter file browser.
 
-You can go through the files and scripts in the repository. 
+### 4. Downloading dataset from LUMI-O
 
-We will start with `demo.ipynb`.
+The dataset is available publicly on LUMI-O. 
+
+You will first need to configure the rclone to retrieve the dataset.
+
+1. Visit [lumi.csc.fi](https://www.lumi.csc.fi/public/) to retrieve the access key for LUMI-O. 
+
+2. Select `LUMI-O Credential Management Service`and select the project you are currently using. 
+
+3. Generate the access key and save `Access key` and `Secret key` somewhere safe and private. 
+
+4. Going back to the Jupyter session and open a terminal in the Jupyter app (**File → New → Terminal**).
+
+5. Set up rcond config for LUMI-O based on the instruction when running the below command. 
+```
+module load lumio
+lumi-conf
+```
+
+6. Download the subset of Real-IAD from LUMI-O
+```
+mkdir dataset/
+rclone copy lumi-462000131-public:realiad-demo-dataset/realiad_1024.zip dataset/
+rclone copy lumi-462000131-public:realiad-demo-dataset/realiad_jsons_sv.zip dataset/
+```
+
+In the `demo.ipynb`, we will unzip the dataset and process it.
+
+Let's start with `demo.ipynb`.
+
 
 -----
 **Acknowledgements**
