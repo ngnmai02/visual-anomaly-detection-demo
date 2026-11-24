@@ -1,3 +1,5 @@
+# DEMO - Visual anomaly detection on LUMI
+
 ## Running the Notebooks (1 GPU Setup)
 
 The demo notebook is designed for interactive use via Jupyter on LUMI.
