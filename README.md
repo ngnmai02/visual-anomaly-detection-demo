@@ -53,10 +53,7 @@ You will first need to configure the rclone to retrieve the dataset.
 
 3. Generate the access key and save `Access key` and `Secret key` somewhere safe and private. 
 
-4. Going back to the Jupyter session and open a terminal in the Jupyter app (**File → New → Terminal**). Make sure you are in the root of this repository.
-```
-pwd
-```
+4. Go to [lumi.csc.fi](https://www.lumi.csc.fi/public/) and access LUMI through `Tools` and then `Login node shells`. If you have set up ssh connection to LUMI, you can proceed with ssh instead.
 
 5. Set up rcond config for LUMI-O based on the instruction when running the below command. 
 ```
@@ -64,13 +61,24 @@ module load lumio
 lumi-conf
 ```
 
-6. Download the subset of Real-IAD from LUMI-O
+6. Download the subset of Real-IAD from LUMI-O.
 ```
+PROJECT=project_46XXXXXXX
+cd /scratch/$PROJECT/$USER/visual-anomaly-detection-demo
 mkdir dataset/
 rclone copy lumi-462000131-public:realiad-demo-dataset/realiad_1024.zip dataset/
 rclone copy lumi-462000131-public:realiad-demo-dataset/realiad_jsons_sv.zip dataset/
 ```
 
+7. Unzip the dataset
+```
+cd dataset/
+unzip realiad_1024.zip
+unzip realiad_1024_jsons_sv.zip
+echo "Finish unziping the dataset"
+```
+
+Now we have got the dataset, we can come back to the Jupyter notebook session.
 In the `demo.ipynb`, we will unzip the dataset and process it.
 
 Let's start with `demo.ipynb`.
